@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Label, Checkbox, TextInput, Textarea, Button } from "flowbite-react";
+import { Label, Radio, TextInput, Textarea, Button } from "flowbite-react";
 
 const AddNewMeal = () => {
   const [ingredientFields, setIngredientFields] = useState([
@@ -7,6 +7,8 @@ const AddNewMeal = () => {
   ]);
 
   const [directionFields, setDirectionFields] = useState([{ direction: "" }]);
+
+  const [selectedMealType, setSelectedMealType] = useState("Breakfast");
 
   const handleIngredientChange = (event, index) => {
     let data = [...ingredientFields];
@@ -18,6 +20,10 @@ const AddNewMeal = () => {
     let data = [...directionFields];
     data[index][event.target.name] = event.target.value;
     setDirectionFields(data);
+  };
+
+  const handleMealTypeChange = (event) => {
+    setSelectedMealType(event.target.value);
   };
 
   const addIngredientField = () => {
@@ -41,10 +47,6 @@ const AddNewMeal = () => {
     setDirectionFields([...directionFields, object]);
   };
 
-  const addSides = () => {
-    console.log("side");
-  };
-
   const removeIngredientField = (index) => {
     let data = [...ingredientFields];
     data.splice(index, 1);
@@ -61,6 +63,8 @@ const AddNewMeal = () => {
     event.preventDefault();
     const form = event.target;
 
+    console.log(selectedMealType);
+
     const recipeName = form.recipeName.value;
     const description = form.description.value;
     const servings = form.servings.value;
@@ -70,6 +74,7 @@ const AddNewMeal = () => {
     const cookTime = form.cookTime.value;
     const notes = form.notes.value;
     const tags = form.tags.value.split(",");
+    const mealType = selectedMealType;
 
     const recipeObj = {
       recipeName,
@@ -81,6 +86,7 @@ const AddNewMeal = () => {
       cookTime,
       notes,
       tags,
+      mealType,
     };
 
     console.log(recipeObj);
@@ -172,13 +178,6 @@ const AddNewMeal = () => {
                   >
                     x
                   </Button>
-                  {/* <Button
-                  className="w-1/8"
-                  type="button"
-                  onClick={() => addIngredientSubstitution(index)}
-                >
-                  Sub
-                </Button> */}
                 </div>
               );
             })}
@@ -266,12 +265,58 @@ const AddNewMeal = () => {
           />
         </div>
 
-        {/* Add sides */}
-
-        {}
-        <Button type="button" onClick={addSides}>
-          Add a Side
-        </Button>
+        {/* Meal type select */}
+        <fieldset className="flex max-w-md flex-col gap-4">
+          <legend className="mb-4">Select Meal Type</legend>
+          <div className="flex items-center gap-2">
+            <Radio
+              id="breakfast"
+              name="meal"
+              value="Breakfast"
+              checked={selectedMealType === "Breakfast"}
+              onChange={handleMealTypeChange}
+            />
+            <Label className="text-white" htmlFor="breakfast">
+              Breakfast
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Radio
+              id="lunch"
+              name="meal"
+              value="Lunch"
+              checked={selectedMealType === "Lunch"}
+              onChange={handleMealTypeChange}
+            />
+            <Label className="text-white" htmlFor="lunch">
+              Lunch
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Radio
+              id="dinner"
+              name="meal"
+              value="Dinner"
+              checked={selectedMealType === "Dinner"}
+              onChange={handleMealTypeChange}
+            />
+            <Label className="text-white" htmlFor="dinner">
+              Dinner
+            </Label>
+          </div>
+          <div className="flex items-center gap-2">
+            <Radio
+              id="snack"
+              name="meal"
+              value="Snacks"
+              checked={selectedMealType === "Snacks"}
+              onChange={handleMealTypeChange}
+            />
+            <Label className="text-white" htmlFor="snack">
+              Snacks
+            </Label>
+          </div>
+        </fieldset>
 
         {/* Submit */}
         <div className="pt-3">

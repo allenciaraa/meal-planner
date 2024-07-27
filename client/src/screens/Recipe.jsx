@@ -14,6 +14,7 @@ const Recipe = () => {
     cookTime,
     notes,
     tags,
+    mealType,
   } = useLoaderData();
 
   return (
@@ -47,6 +48,8 @@ const Recipe = () => {
         </div>
 
         <div>{notes}</div>
+
+        <div>Meal Type: {mealType}</div>
 
         <div className="flex flex-row">
           {tags.map((tag, index) => (

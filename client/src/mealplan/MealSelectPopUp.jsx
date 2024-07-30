@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { Button, Checkbox, Label, Modal, Select, TextInput} from "flowbite-react";
 import { useEffect, useState } from "react";
 
 const MealSelectPopUp = ({ name }) => {
@@ -22,12 +22,15 @@ const MealSelectPopUp = ({ name }) => {
       <Modal show={openModal} size="md" onClose={onCloseModal} popup>
         <Modal.Header>{name}</Modal.Header>
         <Modal.Body>
-          <div className="space-y-6">
-            {allRecipes.map((recipe) => (
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                {recipe.recipeName}
-              </p>
-            ))}
+          <div className="max-w-md">
+            <div className="mb-2 block">
+              <Label htmlFor="recipeSelect" value="Select a meal" />
+            </div>
+            <Select id="recipeSelect" required>
+              {allRecipes.map((recipe) => (
+                <option>{recipe.recipeName}</option>
+              ))}
+            </Select>
           </div>
         </Modal.Body>
       </Modal>

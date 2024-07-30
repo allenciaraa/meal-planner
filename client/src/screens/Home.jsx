@@ -1,11 +1,11 @@
 import React from "react";
-import MealsRow from "../components/MealsRow";
-import Quiz from "../components/Quiz";
+import Calendar from "../components/Calendar";
 
 const Home = () => {
   return (
     <div>
-      <Quiz />
+      <h1>Meal Plan</h1>
+      <Calendar />
     </div>
   );
 };

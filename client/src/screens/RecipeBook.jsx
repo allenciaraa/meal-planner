@@ -17,7 +17,7 @@ const RecipeBook = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        alert("Book has been deleted successfully");
+        alert("Recipe has been deleted successfully");
       });
   };
 

@@ -29,12 +29,12 @@ A full-stack web application that helps users organize their meals by saving rec
 ## 📸 Screenshots
 
 Meal Plan and Grocery List
-![Meal Planner screenshots](./frontend/src/assets/mealplan.png)
-![Grocery List](./frontend/src/assets/grocery_list.png)
+<img src="./frontend/src/assets/mealplan.png" alt="Meal Planner" height="300">
+<img src="./frontend/src/assets/grocery_list.png" alt="Grocery List" height="300">
 
 Dropdown Menu of Saved Recipes
-![Recipe List Dropdown - Closed](./frontend/src/assets/recipes_closed.png)
-![Recipe List Dropdown - Open](./frontend/src//assets/recipes_open.png)
+<img src="./frontend/src/assets/recipes_closed.png" alt="Recipe List Dropdown - Closed" height="300">
+<img src="./frontend/src//assets/recipes_open.png" alt="Recipe List Dropdown - Open" height="300">
 
 ## 🔮 Future Improvements
 

@@ -28,7 +28,7 @@ A full-stack web application that helps users organize their meals by saving rec
 
 ## 📸 Screenshots
 
-Meal Plan and Grocery List
+Meal Plan and Grocery List\
 <img src="./frontend/src/assets/mealplan.png" alt="Meal Planner" height="300">
 <img src="./frontend/src/assets/grocery_list.png" alt="Grocery List" height="300">
 

@@ -9,7 +9,7 @@ const Header = () => {
           <h1 className="font-bold text-sm sm:text-xl">Home</h1>
         </Link>
         <ul className="flex gap-4">
-          <Link to="/meal-plan">
+          <Link to="/">
             <li className="hidden sm:inline hover:underline">Meal Plan</li>
           </Link>
           <Link to="/recipe-book">
